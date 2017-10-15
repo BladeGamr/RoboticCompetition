@@ -3,7 +3,7 @@
 
 task main()
 {
-while () {
+while (true) {
 motor[Servo1] = 90;
 wait1Msec(1);
 motor[Servo1] = -180;
@@ -12,5 +12,6 @@ motor[Servo1] = -180;
 //servo1.setMotorSpeeds = 127;
 //Servo1 = 5;
 wait1Msec(1);
+
 }
 }
