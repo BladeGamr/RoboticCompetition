@@ -29,8 +29,8 @@ motor[largeRight] = 112;
 
 //motor[largeLeft] = -100;
 //motor[largeRight] = -115;
-if (abs(vexRT[2]) > 0.5) {
-	if (vexRT[2] < 1) {
+if (abs(vexRT[Ch2]) > 0.5) {
+	if (vexRT[Ch2] < 1) {
 		if (forkliftPosition > -5) {
 			motor[Forklift] = vexRT[Ch2] * 0.75;
 	}
@@ -40,7 +40,7 @@ if (forkliftPosition < 120) {
 }
 }
 //motor[Forklift] = vexRT[Ch2]/2;
-forkliftPosition =+ vexRT[Ch2];
+forkliftPosition += vexRT[Ch2];
 
 }
 
