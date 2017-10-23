@@ -11,6 +11,8 @@ task main()
 
 while (true) {
 int forwardPower = vexRT[Ch3];
+int previousChannel3 = 0;
+int previousChannel4 = 0;
 if (vexRT[Btn8D] == 1 ) {
 motor[largeLeft] = 100;
 motor[largeRight] = 112;
@@ -26,18 +28,36 @@ if (vexRT[Btn8U] == 1) {
 motor[largeLeft] = -100;
 motor[largeRight] = -115;
 }
-
-if (abs (vexRT[Ch3]) > 1){
-
+///
+//
+ if (vexRT[3] < 1) {
+   //negative
+} else {
+//positive
+}
+//if (abs (vexRT[Ch3]) > 1){
+if (abs(vexRT[Ch3]) > abs(vexRT[Ch4])) {
 motor[largeLeft] = vexRT[Ch3];
 motor[largeRight] = vexRT[Ch3];
 
+} else {
+//}
+
+if ((vexRT[Ch4]) > 25) {
+//motor[largeLeft] = vexRT[Ch4] * -1;
+motor[largeLeft] = vexRT[Ch4];
+motor[largeRight] = vexRT[Ch4] * 0.2;
 }
 
-if (abs (vexRT[Ch4]) > 1) {
-motor[largeLeft] = vexRT[Ch4];
-motor[largeRight] = vexRT[Ch4];
+if ((vexRT[Ch4]) < -25) {
+//motor[largeLeft] = vexRT[Ch4] * -1;
+motor[largeRight] = vexRT[Ch4] * -1;
+motor[largeLeft] = vexRT[Ch4] * -0.2;
+
 }
+}
+previousChannel3 = vexRT[Ch3];
+previousChannel4 = vexRT[Ch4];
 
 if (vexRT[Btn7L] == 1) {
 motor[largeLeft] = 50;
