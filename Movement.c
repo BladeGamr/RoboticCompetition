@@ -39,11 +39,21 @@ if (abs(vexRT[Ch2]) > 0.5) {
 //
 //else {
 // (-(motor[Forklift])>= 0) {
-	motor[Forklift] = -(vexRT[Ch2] * 0.75);
+//if (forkliftPosition <= 90 && forkliftPosition >= 0) {
+	motor[Forklift] = -(vexRT[Ch2]);
+//} else {
+//if (forkliftPosition < 100) {
+//forkliftPosition = 0;
+//} else {
+//forkliftPosition = 90;
+
 //else {
 //tor[Forklift] =-1;
 //
+
+//forkliftPosition += vexRT[Ch2];
 }
+
 //
 
 ///
