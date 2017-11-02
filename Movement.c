@@ -9,9 +9,10 @@ task main()
 
 
 
-//vexRT[Ch1];\
-bool armPosition = false;
-int forkliftPosition = 0;
+//vexRT[Ch1];
+//bool armPosition = false;
+//int forkliftPosition = 0;
+//int turnDir = 1;
 while (true) {
 //int forwardPower = vexRT[Ch3];
 //int previousChannel3 = 0;
@@ -23,12 +24,14 @@ while (true) {
 //motor[largeLeft] = 100;
 //motor[largeRight] = 112;
 //}
+
+/*
 if (vexRT[Btn8L] == 1) {
 	motor[testServo] = 127;
 } else {
 motor[testServo] = -127;
 }
-
+*/
 //motor[largeLeft] = -100;
 //motor[largeRight] = -115;
 if (abs(vexRT[Ch2]) > 0.5) {
@@ -57,61 +60,28 @@ if (abs(vexRT[Ch2]) > 0.5) {
 
 ///
 //
- if (vexRT[3] < 1) {
-   //negative
-} else {
-//positive
-}
+
 
 // Handle Driving on Left Joystick
 if (abs(vexRT[Ch3]) > abs(vexRT[Ch4])) {
 //Forward Drive
 motor[largeLeft] = vexRT[Ch3];
 motor[largeRight] = vexRT[Ch3];
+
 } else {
 if ((vexRT[Ch4]) > 25) {
 // Wide Turn Right
-motor[largeLeft] = vexRT[Ch4];
-motor[largeRight] = vexRT[Ch4] * 0.2;
+
+motor[largeLeft] = vexRT[Ch4]; //* turnDir;
+motor[largeRight] = vexRT[Ch4] * 0.2;// * turnDir;
+
 }
 if ((vexRT[Ch4]) < -25) {
 // Wide Turn Left
-motor[largeRight] = vexRT[Ch4] * -1;
-motor[largeLeft] = vexRT[Ch4] * -0.2;
+motor[largeRight] = vexRT[Ch4] * -1; //* turnDir;
+motor[largeLeft] = vexRT[Ch4] * -0.2; //* turnDir;
 }}
 // All of the button code powered the previous button control system
-//if (vexRT[Btn6D]) {
-//motor[testServo] = 127;
-//}
-//if (vexRT[Btn7L] == 1) {
-//motor[largeLeft] = 50;
-//motor[largeRight] = -50;
-
-//}
-
-//if (vexRT[Btn7R] == 1 ) {
-//motor[largeLeft] = -50;
-//motor[largeRight] = 50;
-//}
-
-//if (vexRT[Btn8L] == 1) {
-//motor[largeLeft] = -75;
-//motor[largeRight] = -100;
-
-//}
-
-//if (vexRT[Btn8R] == 1 ) {
-//motor[largeLeft] = -100;
-//motor[largeRight] = -50;
-//}
-
-// This will act as an 'emergecy' stop
-if (vexRT[Btn7U] == 1) {
-
-motor[largeLeft] = 0;
-motor[largeRight] = 0;
-
-}
 
 }
 }
