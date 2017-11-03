@@ -12,10 +12,10 @@ task main()
 
 		if((vexRT[Btn8L] == 1)) {
 			motor[launchServo] = 127;
-			motor[launchServo] = 127;
+			//motor[launchServo] = 127;
 			} else {
-			motor[launchServo] = 127;
-			motor[launchServo] = 127;
+			motor[launchServo] = -127;
+			//motor[launchServo] = -127;
 		}
 
 		if (abs(vexRT[Ch2]) > 0.5) {
