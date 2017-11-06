@@ -30,17 +30,17 @@ task main()
 			motor[largeRight] = vexRT[Ch3];
 			} else {
 
-			if ((vexRT[Ch4]) > 25) {
+			if (abs (vexRT[Ch4]) > 25) {
 				// Wide Turn Right
 				motor[largeLeft] = vexRT[Ch4];
-				motor[largeRight] = vexRT[Ch4] * 0.2;
+				motor[largeRight] = vexRT[Ch4]; //* 0.2;
 			}
 
-			if ((vexRT[Ch4]) < -25) {
+		/*	if ((vexRT[Ch4]) < -25) {
 				// Wide Turn Left
 				motor[largeRight] = vexRT[Ch4] * -1;
 				motor[largeLeft] = vexRT[Ch4] * -0.2;
-			}
+			} */
 		}
 
 	}
