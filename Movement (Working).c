@@ -7,15 +7,7 @@
 task main()
 {
 
-
-
-int direction = 0;
-//1 = Forward && 2 = Backward && 0 = Nothing
-
-
-
-while (true) {
-
+	while (true) {
 
 
 		if((vexRT[Btn8L] == 1)) {
@@ -37,7 +29,7 @@ while (true) {
 			motor[largeLeft] = vexRT[Ch3];
 			motor[largeRight] = vexRT[Ch3];
 			} else {
-			if (vexRT[Ch3] >= -50) {
+
 			if (abs (vexRT[Ch4]) > 25) {
 				// Wide Turn Right
 				motor[largeLeft] = vexRT[Ch4];
@@ -49,19 +41,7 @@ while (true) {
 				motor[largeRight] = vexRT[Ch4] * -1;
 				motor[largeLeft] = vexRT[Ch4] * -0.2;
 			}
-		} else { // This is if channel 4 (left joystick y) is negative
-			if (abs (vexRT[Ch4]) > 25) {
-				// Wide Turn Right
-				motor[largeLeft] = -(vexRT[Ch4]);
-				motor[largeRight] = -(vexRT[Ch4] * 0.2);
-			}
+		}
 
-			if ((vexRT[Ch4]) < -25) {
-				// Wide Turn Left
-				motor[largeRight] = -(vexRT[Ch4] * -1);
-				motor[largeLeft] = -(vexRT[Ch4] * -0.2);
-			}
-	}
-}
 	}
 }
